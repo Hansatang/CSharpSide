@@ -1,0 +1,14 @@
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\bin\Debug\netcoreapp3.1\ClientVersion2.exe
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\bin\Debug\netcoreapp3.1\ClientVersion2.deps.json
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\bin\Debug\netcoreapp3.1\ClientVersion2.runtimeconfig.json
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\bin\Debug\netcoreapp3.1\ClientVersion2.runtimeconfig.dev.json
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\bin\Debug\netcoreapp3.1\ClientVersion2.dll
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\bin\Debug\netcoreapp3.1\ClientVersion2.pdb
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\obj\Debug\netcoreapp3.1\ClientVersion2.csprojAssemblyReference.cache
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\obj\Debug\netcoreapp3.1\ClientVersion2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\obj\Debug\netcoreapp3.1\ClientVersion2.AssemblyInfoInputs.cache
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\obj\Debug\netcoreapp3.1\ClientVersion2.AssemblyInfo.cs
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\obj\Debug\netcoreapp3.1\ClientVersion2.csproj.CoreCompileInputs.cache
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\obj\Debug\netcoreapp3.1\ClientVersion2.dll
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\obj\Debug\netcoreapp3.1\ClientVersion2.pdb
+C:\Users\krzys\Downloads\SEP3SocketExample-master\SEP3SocketExample-master\CSharpSide\ClientVersion2\obj\Debug\netcoreapp3.1\ClientVersion2.genruntimeconfig.cache
