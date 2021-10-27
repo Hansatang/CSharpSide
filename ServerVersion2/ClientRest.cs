@@ -16,10 +16,10 @@ namespace ServerVersion2
             client = new HttpClient();
         }
         
-        public async Task<IList<String>> GetAdultAsync()
+        public async Task<IList<String>> GetNoteAsync(String s)
         {
             Console.WriteLine("Hi");
-            Task<string> stringAsync = client.GetStringAsync(uri + "/BankF/1234");
+            Task<string> stringAsync = client.GetStringAsync(uri + "/Group/"+s);
             string message = await stringAsync;
             List<String> result = JsonSerializer.Deserialize<List<String>>(message);
             Console.WriteLine("Hi2");

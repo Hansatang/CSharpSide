@@ -32,14 +32,15 @@ namespace ServerVersion2
             ClientRest = new ClientRest();
         }
 
-        public async Task Run()
+        public async Task Run(string s)
         {
             // respond
             
-            IList<String> malpki = await ClientRest.GetAdultAsync();
-            Console.WriteLine(malpki[0]);
+            IList<String> notes = await ClientRest.GetNoteAsync(s);
+            Console.WriteLine(notes[0]);
 
-            string productsAsJson = JsonSerializer.Serialize(malpki);
+            string productsAsJson = JsonSerializer.Serialize(notes);
+            Console.WriteLine("hi"+productsAsJson);
             byte[] dataToClient = Encoding.ASCII.GetBytes(productsAsJson);
             Stream.Write(dataToClient, 0, dataToClient.Length);
 
@@ -58,7 +59,7 @@ namespace ServerVersion2
                 string s = Encoding.ASCII.GetString(dataFromClient, 0, bytesRead);
                 Console.WriteLine(s + "1");
 
-                await Run();
+                await Run(s);
             }
         }
     }
