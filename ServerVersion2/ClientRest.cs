@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Sep3Blazor.Model;
 
 namespace ServerVersion2
 {
@@ -16,31 +17,31 @@ namespace ServerVersion2
         {
             client = new HttpClient();
         }
-        
+
         public async Task<IList<String>> GetNoteAsync(String s)
         {
             Console.WriteLine("Hi");
-            Task<string> stringAsync = client.GetStringAsync(uri + "/Group/"+s);
+            Task<string> stringAsync = client.GetStringAsync(uri + "/Group/" + s);
             string message = await stringAsync;
             List<String> result = JsonSerializer.Deserialize<List<String>>(message);
             Console.WriteLine("Hi2");
             return result;
         }
-        
-        public async Task AddAdultAsync(Adult adult)
-        {
-            string adultAsJson = JsonSerializer.Serialize(adult);
-                HttpContent content = new StringContent(adultAsJson,
-                    Encoding.UTF8,
-                    "application/json");
-                Console.WriteLine(2);
-                HttpResponseMessage responseMessage = await client.PostAsync(uri + "/adult", content);
-                Console.WriteLine(responseMessage.Content);
 
-                if (!responseMessage.IsSuccessStatusCode)
-                {
-                    throw new Exception(@"Error : (responseMessage.Status), (responseMessage.ReasonPhrase");
-                }
+        public async Task AddNoteAsync(Message message)
+        {
+            string noteAsJson = JsonSerializer.Serialize(message);
+            HttpContent content = new StringContent(noteAsJson,
+                Encoding.UTF8,
+                "application/json");
+            Console.WriteLine(2);
+            HttpResponseMessage responseMessage = await client.PutAsync(uri + "/Group", content);
+            Console.WriteLine(responseMessage.Content);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception(@"Error : (responseMessage.Status), (responseMessage.ReasonPhrase");
+            }
         }
     }
 }

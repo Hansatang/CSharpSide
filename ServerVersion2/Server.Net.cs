@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Sep3Blazor.Model;
 
 namespace ServerVersion2
 {
@@ -35,14 +36,30 @@ namespace ServerVersion2
         public async Task Run(string s)
         {
             // respond
-            
-            IList<String> notes = await ClientRest.GetNoteAsync(s);
-            Console.WriteLine(notes[0]);
-
-            string productsAsJson = JsonSerializer.Serialize(notes);
-            Console.WriteLine("hi"+productsAsJson);
-            byte[] dataToClient = Encoding.ASCII.GetBytes(productsAsJson);
-            Stream.Write(dataToClient, 0, dataToClient.Length);
+            Message message = JsonSerializer.Deserialize<Message>(s);
+            Console.WriteLine("HYT "+message.type);
+            if (message.type.Equals("Get"))
+            {
+                    IList<String> notes = await ClientRest.GetNoteAsync(message.message);
+                           Console.WriteLine(notes[0]);
+               
+                           string productsAsJson = JsonSerializer.Serialize(notes);
+                           Console.WriteLine("hi"+productsAsJson);
+                           byte[] dataToClient = Encoding.ASCII.GetBytes(productsAsJson);
+                           Stream.Write(dataToClient, 0, dataToClient.Length); 
+            }
+            else if(message.type.Equals("Post"))
+            {
+                await ClientRest.AddNoteAsync(message);
+                IList<String> notes = await ClientRest.GetNoteAsync("5");
+                Console.WriteLine(notes[0]);
+                
+                string productsAsJson = JsonSerializer.Serialize(notes);
+                Console.WriteLine("hi"+productsAsJson);
+                byte[] dataToClient = Encoding.ASCII.GetBytes(productsAsJson);
+                Stream.Write(dataToClient, 0, dataToClient.Length);  
+            }
+       
 
             // close connection
             // Client.Close();
